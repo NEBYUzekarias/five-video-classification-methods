@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package humanaction;
+
+// The greeting service definition.
+service HumanAction {
+ 
+
+  rpc Classify(stream Chunk) returns (stream label) {}
+}
+
+// The request message containing the user's name.
+message Chunk {
+        bytes Content = 1;
+}
+// The response message containing the greetings
+message label {
+  float message1 = 1;
+  float message2 = 2;
+  float message3 = 3;
+  float message4 = 4;
+  float message5 = 5;
+  float message6 = 6;
+  float message7 = 7;
+  float message8 = 8;
+  float message9 = 9;
+  float message10 = 10;
+  string class1 = 11;
+  string class2 = 12;
+  string class3 = 13;
+  string class4 = 14;
+  string class5 = 15;
+  string class6 = 16;
+  string class7 = 17;
+  string class8 = 18;
+  string class9 = 19;
+  string class10 = 20;
+
+  
+
+}
