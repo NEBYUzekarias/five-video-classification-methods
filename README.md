@@ -68,4 +68,5 @@ Khurram Soomro, Amir Roshan Zamir and Mubarak Shah, UCF101: A Dataset of 101 Hum
 
 ## Generate gRPC code
 from `five-video-classification-methods/` directory , run:
-$ ` python -m grpc_tools.protoc -I protos/  --python_out=. --grpc_python_out=. protos/humanaction.proto'
+
+$ ` python -m grpc_tools.protoc -I protos/  --python_out=. --grpc_python_out=. protos/humanaction.proto`
