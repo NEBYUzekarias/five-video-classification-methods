@@ -65,3 +65,7 @@ I have not yet implemented a demo where you can pass a video file to a model and
 
 Khurram Soomro, Amir Roshan Zamir and Mubarak Shah, UCF101: A Dataset of 101 Human Action Classes From Videos in The Wild., CRCV-TR-12-01, November, 2012. 
 
+
+## Generate gRPC code
+from `five-video-classification-methods/` directory , run:
+$ ` python -m grpc_tools.protoc -I protos/  --python_out=. --grpc_python_out=. protos/humanaction.proto'
