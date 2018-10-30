@@ -56,7 +56,7 @@ I have not yet implemented a demo where you can pass a video file to a model and
 
 - [ ] Add data augmentation to fight overfitting
 - [x] Support multiple workers in the data generator for faster training
-- [ ] Add a demo script
+- [x] Add a demo script
 - [ ] Support other datasets
 - [ ] Implement optical flow
 - [ ] Implement more complex network architectures, like optical flow/CNN fusion

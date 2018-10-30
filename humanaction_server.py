@@ -50,14 +50,15 @@ class HumanActionServicer(humanaction_pb2_grpc.HumanActionServicer):
               message= []
               classs = []
               sorted_lps = data.print_class_from_prediction(np.squeeze(prediction, axis=0))
-              for i, class_prediction in enumerate(sorted_lps):
-                  if i > 10 - 1 or class_prediction[1] == 0.0:
-                      break
-                  print("%s: %.2f" % (class_prediction[0], class_prediction[1]))
-                  message.append(class_prediction[1])
-                  classs.append(class_prediction[0])
-                  first = class_prediction[0]
-                  v1 = class_prediction[1]
+              if sorted_lps is not None:
+                  for i, class_prediction in enumerate(sorted_lps):
+                      if i > 10 - 1 or class_prediction[1] == 0.0:
+                          break
+                      print("%s: %.2f" % (class_prediction[0], class_prediction[1]))
+                      message.append(class_prediction[1])
+                      classs.append(class_prediction[0])
+                      first = class_prediction[0]
+                      v1 = class_prediction[1]
       
               yield humanaction_pb2.label(message1 = message[0],
                                           message2 = message[1],
@@ -92,7 +93,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     humanaction_pb2_grpc.add_HumanActionServicer_to_server(
         HumanActionServicer(), server)
-    server.add_insecure_port('[::]:50055')
+    server.add_insecure_port('[::]:50054')
     server.start()
     try:
         while True:
