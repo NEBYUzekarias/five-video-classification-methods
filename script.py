@@ -49,5 +49,7 @@ def imshoww():
 	cv2.destroyAllWindows()
 	fvs.stop()
 
-Thread(target = humanaction_client.run(args["video"])).start()
+thread = Thread(target = humanaction_client.run(args["video"]))
+thread.daemon = True
+thread.start()
 Thread(target = imshoww).start()
