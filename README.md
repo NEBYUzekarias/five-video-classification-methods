@@ -83,3 +83,6 @@ $ ` python humanaction_server.py `
 from `five-video-classification-methods/` directory , run:
 
 $ ` python  script.py --video  addresOFvideoFile `
+
+
+Download link for model https://drive.google.com/file/d/1yoXxNZ6kdXnI7O37Wv1f5BvmITC9T9O-/view?usp=sharing
